@@ -4,6 +4,7 @@ public class Conta {
     public String titular;
     public String numeroConta;
     public Double saldo;
+    
 
     // Metodo construtuor
     public Conta() {
@@ -14,6 +15,7 @@ public class Conta {
         this.titular = titular;
         this.numeroConta = numeroConta;
         this.saldo = saldo;
+        
     }
 
         // metodo sem retorno
@@ -27,7 +29,7 @@ public class Conta {
     
     public Double mostrarSaldo(){
         return this.saldo;
-    }
+    }   
 
     public void depositar(Double valor){
         this.saldo += valor;
@@ -35,7 +37,11 @@ public class Conta {
 
     public Double sacar(Double valor){
         this.saldo -= valor;
+        
+       
         return this.mostrarSaldo();
     }
-
+    
+    
+    
 }
