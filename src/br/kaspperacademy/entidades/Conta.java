@@ -1,17 +1,19 @@
 package br.kaspperacademy.entidades;
 
 public class Conta {
-    public String titular;
-    public String numeroConta;
-    public Double saldo;
+    private Cliente titular;
+    private String numeroConta;
+    private double saldo;
     
+
+  
 
     // Metodo construtuor
     public Conta() {
     }
 
     // Metodo construtuor com parametros
-    public Conta(String titular, String numeroConta, Double saldo) {
+    public Conta(Cliente titular, String numeroConta, double saldo) {
         this.titular = titular;
         this.numeroConta = numeroConta;
         this.saldo = saldo;
@@ -20,26 +22,53 @@ public class Conta {
 
         // metodo sem retorno
     public void imprimirDadosBancarios (){
-        System.out.println("Titular: " + this.titular );
+        System.out.println("Titular: " + this.titular.getNome() + " CPF:" + this.titular.getCpf());
         System.out.println("Numero da Conta: " + this.numeroConta);
         System.out.println("Saldo da conta: " + this.saldo);
     }
 
         // metodo com retorno
     
-    public Double mostrarSaldo(){
+    public double mostrarSaldo(){
         return this.saldo;
     }   
 
-    public void depositar(Double valor){
+    public void depositar(double valor){
         this.saldo += valor;
     }
 
-    public Double sacar(Double valor){
+    public double sacar(double valor){
         this.saldo -= valor;
         
        
         return this.mostrarSaldo();
+    }
+
+    // get - Recupera um valor do metodo 
+    // set - insere um valor no metodo 
+
+    public Cliente getTitular(){
+        return titular;
+    }
+
+    public void setTitular(Cliente titular){
+        this.titular = titular;
+    }
+
+    public String getNumeroConta(){
+        return numeroConta;
+    }
+
+    public void setNumeroConta (String numeroConta){
+        this.numeroConta = numeroConta;
+    }
+
+    public void setSaldo(double saldo) {
+        this.saldo = saldo;
+    }
+
+    public double getSaldo() {
+        return saldo;
     }
     
     
